@@ -25,6 +25,7 @@ To use these features, simply declare the `paired` argument as either "sequentia
 
 ```{r setup, warning = FALSE, message = FALSE}
 library(dabestr)
+library(dplyr)
 ```
 
 ## Create dataset for demo
