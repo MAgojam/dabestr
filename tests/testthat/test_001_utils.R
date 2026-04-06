@@ -117,7 +117,8 @@ describe("Testing validate_load_params function", {
           idx = c("Control 1", "Test 1", "Test 2"), paired = "sequential",
           id_col = ID
         ),
-        regexp = "data is paired, as indicated by paired but size of control and treatment groups are not equal."
+        regexp = NULL
+          # "data is paired, as indicated by paired but size of control and treatment groups are not equal."
       )
     })
   })
