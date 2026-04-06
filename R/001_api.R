@@ -237,9 +237,8 @@ load <- function(
       filter_df <- data %>%
         dplyr::filter(!!enquo_x %in% unlisted_pair)
       check_ns <- filter_df %>%
-        dplyr::group_by(!!enquo_id_col) %>%
-        dplyr::filter(n()==1)
-      if(nrow(check_ns) > 0){
+        dplyr::count(!!enquo_x)
+      if (length(unique(check_ns$n)) > 1) {
         cli::cli_abort(c("{.field data} is paired, as indicated by {.field paired} but size of control and treatment groups are not equal.",
         "x" = "Ensure that the size of control and treatment groups are the same for paired comparisons."
       ))
